@@ -39,6 +39,34 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public String getSum()
+    {
+        //initialize database
+        SQLiteDatabase database = getReadableDatabase();
+
+        //initialize string
+        String sAmount;
+        //Query for getting sum
+        String sQuery = "select sum(stuTime) from " + "Userdetails";
+
+        Cursor cursor = database.rawQuery(sQuery,null);
+
+        //check condition
+        if(cursor.moveToFirst())
+        {
+            //when cursor moves to first item
+            //get total amount
+            sAmount = String.valueOf(cursor.getInt(0));
+        }
+        else{
+            sAmount = "0";
+        }
+        cursor.close();
+        database.close();
+        //pass total
+        return sAmount;
+    }
+
     public Cursor getData()
     {
         SQLiteDatabase db = this.getWritableDatabase();
