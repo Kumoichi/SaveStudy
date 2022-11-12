@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView toDoTask, stuTime;
     Button insert_btn, view_btn;
     DBHelper db;
+    int count = 0;
 
 
     @Override
@@ -45,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 String task_text = toDoTask.getText().toString();
                 String stuTime_text = stuTime.getText().toString();
 
-                Boolean checkinsertData = db.insertuserData(subject_text,task_text,stuTime_text);
+                count += 1;
+                Boolean checkinsertData = db.insertuserData(subject_text,task_text,stuTime_text,count);
                 if(checkinsertData==true){
                     Toast.makeText(MainActivity.this, "New data inserted", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(MainActivity.this,"not inserted", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
