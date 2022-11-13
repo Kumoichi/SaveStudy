@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/activity_main.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/activity_result.xml" value="0.15" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/activity_timer.xml" value="0.15" />
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/activity_user_list.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/userdata.xml" value="0.1703125" />
       </map>

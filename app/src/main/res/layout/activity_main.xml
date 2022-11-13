@@ -68,7 +68,6 @@
         android:id="@+id/timeData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="5"
         android:layout_below="@+id/timeView"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
@@ -115,16 +114,18 @@
         android:textAllCaps="false"
         android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/total_text"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/goTimer_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
         android:layout_below="@+id/total_btn"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="22sp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:textSize="22sp"
+        android:text="go to timer"
+        android:textAllCaps="false"
+        android:textStyle="bold"/>
 
 </RelativeLayout>
 

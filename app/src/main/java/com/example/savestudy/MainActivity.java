@@ -17,11 +17,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     EditText subject;
-    TextView toDoTask, stuTime, total_text;
-    Button insert_btn, view_btn, total_btn;
+    TextView toDoTask, stuTime;
+    Button insert_btn, view_btn, total_btn, goTimer_btn;
     DBHelper db;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +32,15 @@ public class MainActivity extends AppCompatActivity {
         insert_btn = findViewById(R.id.insert_btn);
         view_btn = findViewById(R.id.view_btn);
         total_btn = findViewById(R.id.total_btn);
-        total_text = findViewById(R.id.total_text);
+        goTimer_btn = findViewById(R.id.goTimer_btn);
 
         db = new DBHelper(this);
+
+        //getting timer value
+        Intent mIntent = getIntent();
+        int intValue = mIntent.getIntExtra("timedata", 0);
+        String studyTime = String.valueOf(intValue);
+       stuTime.setText(studyTime);
 
         view_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,9 +71,19 @@ public class MainActivity extends AppCompatActivity {
 
         total_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                total_text.setText(db.getSum());
+            public void onClick(View view)
+            {
+                String totalVal = db.getSum();
+                Intent i = new Intent(MainActivity.this, result.class);
+                i.putExtra("key",totalVal);
+                startActivity(i);
+            }
+        });
 
+        goTimer_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Timer.class));
             }
         });
     }
