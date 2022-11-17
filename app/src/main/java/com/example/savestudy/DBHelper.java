@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class DBHelper extends SQLiteOpenHelper {
     private static final String ALERT_DATABASE = "Userdata.db";
     private static final int DATABASE_VERSION = 1;
@@ -28,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + SUBJECT_ID +" TEXT,"
             + TODO_ID +" TEXT,"
             + TIME_ID +" TEXT,"
-            + COUNT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT)";
+            + COUNT_ID + " INTEGER PRIMARY KEY)";
 
     private static final String CREATE_ALERT_INFORMATION="CREATE TABLE "
             + TABLE_NAME2 + " ( "
@@ -104,4 +106,47 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     //for the Graph view
+    public void saveData(String valX, String valY){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DATE,valX);
+        values.put(yAXIS, valY);
+
+        db.insert(TABLE_NAME2, null, values);
+    }
+
+
+    public ArrayList<String> queryXData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> xData = new ArrayList<String >();
+
+        String query = "SELECT " + DATE + " FROM " + TABLE_NAME2 + " GROUP BY " + DATE;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            xData.add(cursor.getString(0));
+
+        }
+        cursor.close();
+
+        return xData;
+    }
+
+    public ArrayList<String> queryYData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData = new ArrayList<String >();
+
+        String query = "SELECT SUM(" + yAXIS +") FROM " + TABLE_NAME2 + " WHERE " + yAXIS + " IS NOT NULL " + " GROUP BY " + DATE;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            yData.add(cursor.getString(0));
+
+        }
+        cursor.close();
+
+        return yData;
+    }
 }

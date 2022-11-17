@@ -10,15 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.mikephil.charting.charts.BarChart;
+
 import java.util.Random;
-
-
 
 public class MainActivity extends AppCompatActivity {
 
     EditText subject;
     TextView toDoTask, stuTime;
-    Button insert_btn, view_btn, total_btn, goTimer_btn;
+    Button insert_btn, view_btn, total_btn, goTimer_btn,bar_btn;
     DBHelper db;
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         view_btn = findViewById(R.id.view_btn);
         total_btn = findViewById(R.id.total_btn);
         goTimer_btn = findViewById(R.id.goTimer_btn);
+        bar_btn = findViewById(R.id.Bar_btn);
 
         db = new DBHelper(this);
 
@@ -86,5 +88,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Timer.class));
             }
         });
+
+        bar_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int intValue = mIntent.getIntExtra("timedata", 0);
+                String studyTime = String.valueOf(intValue);
+                Intent intent = new Intent(MainActivity.this, BarGraph.class);
+                intent.putExtra("key", studyTime);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void moveToGraph(View view) {
+        startActivity(new Intent(MainActivity.this, BarGraph.class));
+
     }
 }
