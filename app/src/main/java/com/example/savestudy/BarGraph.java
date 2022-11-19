@@ -3,10 +3,12 @@ package com.example.savestudy;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 public class BarGraph extends AppCompatActivity {
 
     private BarChart barChart;
+    private TextView time_display;
     private Button button;
     private EditText editText;
     private DBHelper db;
@@ -37,16 +40,12 @@ public class BarGraph extends AppCompatActivity {
         barChart = findViewById(R.id.barchart);
         button = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
+        time_display = findViewById(R.id.time_display);
 
         addDataToGraph();
         barChart.invalidate();
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SaveToDatabase();
-            }
-        });
+        SaveToDatabase();
     }
 
     public void SaveToDatabase(){
@@ -55,10 +54,17 @@ public class BarGraph extends AppCompatActivity {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd MMM");
         String xvalues = sdf.format(date);
 
-        String yvalue = editText.getText().toString();
+
+        //intentはされているのでボタンを修正する
+        //時間の表記を変える
+        //１週間たつと違うページに行くようにする
+        Intent mIntent = getIntent();
+        String yvalue = mIntent.getStringExtra("key");
+
+        time_display.setText(yvalue);
 
         db.saveData(xvalues,yvalue);
-        //addDataToGraph();
+        addDataToGraph();
         barChart.invalidate();
         db.close();
     }

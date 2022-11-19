@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         view_btn = findViewById(R.id.view_btn);
         total_btn = findViewById(R.id.total_btn);
         goTimer_btn = findViewById(R.id.goTimer_btn);
-        bar_btn = findViewById(R.id.Bar_btn);
+        bar_btn = findViewById(R.id.bar_btn);
 
         db = new DBHelper(this);
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 String totalVal = db.getSum();
-                Intent i = new Intent(MainActivity.this, result.class);
+                Intent i = new Intent(MainActivity.this, BarGraph.class);
                 i.putExtra("key",totalVal);
                 startActivity(i);
             }
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         bar_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int intValue = mIntent.getIntExtra("timedata", 0);
+
                 String studyTime = String.valueOf(intValue);
                 Intent intent = new Intent(MainActivity.this, BarGraph.class);
                 intent.putExtra("key", studyTime);
