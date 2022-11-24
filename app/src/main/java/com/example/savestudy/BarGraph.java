@@ -74,15 +74,19 @@ public class BarGraph extends AppCompatActivity {
         final ArrayList<BarEntry> yvals = new ArrayList<BarEntry>();
         final ArrayList<String> ydata = db.queryYData();
 
+        //databaseのサイズに届くまで
         for(int i = 0; i < db.queryYData().size(); i++){
             BarEntry newBarEntry = new BarEntry(i, Float.parseFloat(db.queryYData().get(i)));
+            //yvalをフロートに変換して追加している
             yvals.add(newBarEntry);
         }
 
         final ArrayList<String> xvals = new ArrayList<String>();
         final ArrayList<String> xdata = db.queryXData();
 
+        //db.queryXData()っていうのがxのデータをとる
         for(int i = 0; i < db.queryXData().size(); i++){
+            //ここでxのデータをとっている
             xvals.add(xdata.get(i));
         }
 
@@ -93,6 +97,7 @@ public class BarGraph extends AppCompatActivity {
 
         BarData data = new BarData(dataSets1);
 
+        //ｘ軸のフォーマットを決めている
         barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xvals));
 
         barChart.setData(data);

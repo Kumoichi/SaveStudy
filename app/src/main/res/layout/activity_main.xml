@@ -24,12 +24,12 @@
         android:id="@+id/subject_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name"
         android:layout_below="@+id/text"
         android:layout_marginTop="10dp"
+        android:hint="enter subject"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="22sp"/>
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/taskView"
@@ -46,12 +46,12 @@
         android:id="@+id/toDoTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Task"
         android:layout_below="@+id/taskView"
         android:layout_marginTop="10dp"
+        android:text="Task"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textSize="22sp"/>
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/timeView"

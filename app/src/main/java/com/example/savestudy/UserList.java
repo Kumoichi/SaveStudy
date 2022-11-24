@@ -17,6 +17,7 @@ public class UserList extends AppCompatActivity {
     ArrayList<String> subject, toDoTask, stuTime;
     DBHelper db;
     Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class UserList extends AppCompatActivity {
         {
             while(cursor.moveToNext())
             {
+                //ここカーサーでどこをとるか設定してるからcountの場所を移すことができる
                 subject.add(cursor.getString(0));
                 toDoTask.add(cursor.getString(1));
                 stuTime.add(cursor.getString(2));

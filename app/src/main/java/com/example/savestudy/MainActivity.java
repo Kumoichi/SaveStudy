@@ -44,12 +44,15 @@ public class MainActivity extends AppCompatActivity {
         String studyTime = String.valueOf(intValue);
        stuTime.setText(studyTime);
 
+       /*
         view_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, UserList.class));
             }
         });
+        */
+
 
         insert_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,28 +71,14 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(MainActivity.this,"not inserted", Toast.LENGTH_SHORT).show();
                 }
+
+                Intent intent = new Intent(MainActivity.this, DataMenu.class);
+                intent.putExtra("timedata", intValue);
+                startActivity(intent);
             }
         });
 
-        total_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                String totalVal = db.getSum();
-                Intent i = new Intent(MainActivity.this, BarGraph.class);
-                i.putExtra("key",totalVal);
-                startActivity(i);
-            }
-        });
-
-        goTimer_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Timer.class));
-            }
-        });
-
-        bar_btn.setOnClickListener(new View.OnClickListener() {
+        /*bar_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -98,11 +87,13 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("key", studyTime);
                 startActivity(intent);
             }
+        });*/
+
+        goTimer_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Dashboard.class));
+            }
         });
-    }
-
-    public void moveToGraph(View view) {
-        startActivity(new Intent(MainActivity.this, BarGraph.class));
-
     }
 }
