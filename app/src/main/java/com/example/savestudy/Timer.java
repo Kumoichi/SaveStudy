@@ -31,7 +31,7 @@ public class Timer extends AppCompatActivity {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
                 if ((SystemClock.elapsedRealtime() - chronometer.getBase()) >= 100000) {
-                    chronometer.setBase(SystemClock.elapsedRealtime());
+
                     Toast.makeText(Timer.this, "Bing!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -51,8 +51,6 @@ public class Timer extends AppCompatActivity {
             chronometer.stop();
             pauseOffset = SystemClock.elapsedRealtime() - chronometer.getBase();
             running = false;
-
-
         }
     }
 

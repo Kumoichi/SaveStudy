@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         subject = findViewById(R.id.subject_ed);
         toDoTask = findViewById(R.id.toDoTask);
         stuTime = findViewById(R.id.timeData);
@@ -61,10 +60,25 @@ public class MainActivity extends AppCompatActivity {
                 String task_text = toDoTask.getText().toString();
                 String stuTime_text = stuTime.getText().toString();
 
-                Random rand = new Random();
-                int count = rand.nextInt(10000000);
+                //getting cursor object
+                Cursor cursor = db.getCount();
+                String ordering = null;
+                //this code is for top to bottom recyclerview
+                int order = 100000;
 
-                Boolean checkinsertData = db.insertuserData(subject_text,task_text,stuTime_text,count);
+                if(cursor.moveToNext()) {
+                    {
+                        //getting the first value of count in database to get lowest value.
+                        cursor.moveToFirst();
+                        ordering = String.valueOf(cursor.getInt(0));
+                    }
+                    order = Integer.parseInt(ordering);
+                    order = order -1;
+                    subject.setText(String.valueOf(order));
+                }
+
+
+                Boolean checkinsertData = db.insertuserData(subject_text,task_text,stuTime_text,order);
                 if(checkinsertData==true){
                     Toast.makeText(MainActivity.this, "New data inserted", Toast.LENGTH_SHORT).show();
                 }

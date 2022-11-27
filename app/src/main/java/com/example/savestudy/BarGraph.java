@@ -4,10 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -23,11 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class BarGraph extends AppCompatActivity {
-
     private BarChart barChart;
-    private TextView time_display;
-    private Button button;
-    private EditText editText;
     private DBHelper db;
     private long date = System.currentTimeMillis();
 
@@ -38,9 +33,6 @@ public class BarGraph extends AppCompatActivity {
         setContentView(R.layout.activity_bar_graph);
 
         barChart = findViewById(R.id.barchart);
-        button = findViewById(R.id.button);
-        editText = findViewById(R.id.editText);
-        time_display = findViewById(R.id.time_display);
 
         addDataToGraph();
         barChart.invalidate();
@@ -61,9 +53,12 @@ public class BarGraph extends AppCompatActivity {
         Intent mIntent = getIntent();
         String yvalue = mIntent.getStringExtra("key");
 
-        time_display.setText(yvalue);
+        //divide by 60.0 to make display time as hour.
+        double numYvalue = Integer.parseInt(yvalue);
+        numYvalue = numYvalue / 60.0;
+        String stringYvalue = String.valueOf(numYvalue);
 
-        db.saveData(xvalues,yvalue);
+        db.saveData(xvalues,"400");
         addDataToGraph();
         barChart.invalidate();
         db.close();
@@ -90,10 +85,13 @@ public class BarGraph extends AppCompatActivity {
             xvals.add(xdata.get(i));
         }
 
-        BarDataSet dataSet = new BarDataSet(yvals, "Example graph");
+        BarDataSet dataSet = new BarDataSet(yvals, "minutes");
+        dataSet.setValueTextSize(15f);
+
 
         ArrayList<IBarDataSet> dataSets1 = new ArrayList<>();
         dataSets1.add(dataSet);
+
 
         BarData data = new BarData(dataSets1);
 

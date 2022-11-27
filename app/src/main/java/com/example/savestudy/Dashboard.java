@@ -44,7 +44,6 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Dashboard.this,UserList.class);
                 startActivity(intent);
-
             }
         });
 

@@ -24,7 +24,6 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DATE = "date";
     private static final String yAXIS = "yaxis";
 
-
     private static final String CREATE_ALERT_TYPE="CREATE TABLE "
             + TABLE_NAME + " ( "
             + SUBJECT_ID +" TEXT,"
@@ -61,6 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("toDoTask", toDoTask);
         contentValues.put("stuTime", stuTime);
         contentValues.put("count", count);
+
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
             return false;
@@ -104,6 +104,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getCount() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT count FROM Userdetails",null);
+        return cursor;
+        //String ordering = String.valueOf(cursor.getInt(0));
+        //return ordering;
+    }
+
 
     //for the Graph view
     public void saveData(String valX, String valY){
@@ -111,9 +119,9 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(DATE,valX);
         values.put(yAXIS, valY);
-
         db.insert(TABLE_NAME2, null, values);
     }
+
 
 
     public ArrayList<String> queryXData() {
@@ -143,8 +151,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             yData.add(cursor.getString(0));
-
         }
+
         cursor.close();
 
         return yData;
