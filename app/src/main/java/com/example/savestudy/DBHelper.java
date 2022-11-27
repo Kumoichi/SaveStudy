@@ -122,8 +122,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME2, null, values);
     }
 
-
-
     public ArrayList<String> queryXData() {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> xData = new ArrayList<String >();
@@ -134,7 +132,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             xData.add(cursor.getString(0));
-
         }
         cursor.close();
 

@@ -8,45 +8,131 @@
     android:orientation="vertical"
     tools:context=".Timer">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject"
+                android:textColor="@color/black"
+                android:textSize="25dp"></TextView>
+
+            <TextView
+                android:id="@+id/subject_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="edited"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="235dp"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To do task"
+                android:textColor="@color/black"
+                android:textSize="25dp"></TextView>
+
+            <TextView
+                android:id="@+id/todotask_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="edited"
+                android:textColor="@color/black"
+                android:textSize="20dp"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
     <Chronometer
         android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp" />
 
-    <Button
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/round_button"
+        android:textColor="@color/white"
+        android:height="90dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="startChronometer"
         android:text="Start" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginLeft="40dp"
+        android:height="90dp"
+        android:textColor="@color/white"
+        android:background="@drawable/round_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="pauseChronometer"
         android:text="Pause" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="resetChronometer"
-        android:text="Reset" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:height="90dp"
+            android:background="@drawable/round_button"
+            android:onClick="resetChronometer"
+            android:text="Reset"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/timer_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/display_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:onClick="displayChronometer"
-        android:text="Button" />
+        android:text="Record"
+        android:textColor="@color/white"
+        android:background="@color/brown"
+        />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifimage"
+        android:layout_width="282dp"
+        android:layout_height="287dp"
+        android:padding="45dp"
+        android:src="@drawable/studyingdog"
+        android:visibility="invisible" />
 
-
-
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/stopgif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="70dp"
+        android:src="@drawable/stoppeddog"
+        android:visibility="invisible" />
 
 </LinearLayout>

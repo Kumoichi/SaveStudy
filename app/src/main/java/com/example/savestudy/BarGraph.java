@@ -58,7 +58,7 @@ public class BarGraph extends AppCompatActivity {
         numYvalue = numYvalue / 60.0;
         String stringYvalue = String.valueOf(numYvalue);
 
-        db.saveData(xvalues,"400");
+        db.saveData(xvalues,stringYvalue);
         addDataToGraph();
         barChart.invalidate();
         db.close();
@@ -86,7 +86,8 @@ public class BarGraph extends AppCompatActivity {
         }
 
         BarDataSet dataSet = new BarDataSet(yvals, "minutes");
-        dataSet.setValueTextSize(15f);
+        dataSet.setValueTextSize(30f);
+
 
 
         ArrayList<IBarDataSet> dataSets1 = new ArrayList<>();

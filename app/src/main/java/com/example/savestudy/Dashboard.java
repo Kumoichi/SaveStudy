@@ -25,7 +25,7 @@ public class Dashboard extends AppCompatActivity {
         todo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this,Todo.class);
+                Intent intent = new Intent(Dashboard.this,PlanPage.class);
                 startActivity(intent);
             }
         });
