@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -24,8 +25,8 @@ import java.util.ArrayList;
 public class BarGraph extends AppCompatActivity {
     private BarChart barChart;
     private DBHelper db;
+    private ImageView home_button_one;
     private long date = System.currentTimeMillis();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +34,20 @@ public class BarGraph extends AppCompatActivity {
         setContentView(R.layout.activity_bar_graph);
 
         barChart = findViewById(R.id.barchart);
+        home_button_one = findViewById(R.id.home_button_one);
 
         addDataToGraph();
         barChart.invalidate();
 
         SaveToDatabase();
+
+        home_button_one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BarGraph.this,Dashboard.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void SaveToDatabase(){

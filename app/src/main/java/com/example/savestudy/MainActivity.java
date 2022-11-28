@@ -17,9 +17,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText subject;
-    TextView toDoTask, stuTime;
-    Button insert_btn, view_btn, total_btn, goTimer_btn,bar_btn;
+    EditText subject, toDoTask;
+    TextView stuTime;
+    Button insert_btn, view_btn, total_btn, goTimer_btn;
     DBHelper db;
 
     @Override
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         view_btn = findViewById(R.id.view_btn);
         total_btn = findViewById(R.id.total_btn);
         goTimer_btn = findViewById(R.id.goTimer_btn);
-        bar_btn = findViewById(R.id.bar_btn);
 
         db = new DBHelper(this);
 
