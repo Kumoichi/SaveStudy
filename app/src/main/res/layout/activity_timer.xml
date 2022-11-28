@@ -107,13 +107,10 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/display_button"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:onClick="displayChronometer"
         android:text="Record"
         android:textColor="@color/white"
         android:background="@color/brown"

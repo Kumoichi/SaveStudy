@@ -14,16 +14,14 @@ import android.widget.Toast;
 
 public class DataMenu extends AppCompatActivity {
 
-
     ImageButton completed_btn, graph_btn;
-    Button view_btn, bar_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_menu);
 
-        view_btn = findViewById(R.id.view_btn);
-        bar_btn = findViewById(R.id.bar_btn);
+
         completed_btn = findViewById(R.id.completed_btn);
         graph_btn = findViewById(R.id.graph_btn);
 

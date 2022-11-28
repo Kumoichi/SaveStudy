@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,28 +21,45 @@ public class Timer extends AppCompatActivity {
     private boolean running;
     TextView textView, subject_id, todotask_id;
     GifImageView gifimage, stopgif;
-
+    Button displayButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
-
         gifimage = findViewById(R.id.gifimage);
         stopgif = findViewById(R.id.stopgif);
         subject_id = findViewById(R.id.subject_id);
         todotask_id = findViewById(R.id.todotask_id);
+        displayButton = findViewById(R.id.display_button);
 
+        //this is where you are getting string value
         Intent intent = getIntent();
-        String task = intent.getStringExtra("task_one");
-        String subject = intent.getStringExtra("subject_one");
-        subject_id.setText(subject);
-        todotask_id.setText(task);
+        String tasks = intent.getStringExtra("task_one");
+        String subjects = intent.getStringExtra("subject_one");
+        subject_id.setText(subjects);
+        todotask_id.setText(tasks);
+        intent.putExtra("task_two", tasks);
+        intent.putExtra("subject_two", subjects);
 
 
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("Time: %s");
         chronometer.setBase(SystemClock.elapsedRealtime());
+
+        displayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int elapsedTimeInSec = (int) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
+
+                //passing task and subject
+                Intent intent = new Intent(Timer.this, MainActivity.class);
+                intent.putExtra("task_two",tasks);
+                intent.putExtra("subject_two", subjects);
+                intent.putExtra("timedata", elapsedTimeInSec);
+                startActivity(intent);
+            }
+        });
 
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
@@ -80,13 +98,22 @@ public class Timer extends AppCompatActivity {
         pauseOffset = 0;
     }
 
-    public void displayChronometer(View view) {
+    /*public void displayChronometer(View view) {
         //textView.setText(chronometer.getText());
         int elapsedTimeInSec = (int) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
 
-        Intent intent = new Intent(this, MainActivity.class);
+        //getting task and subject
+        Intent intent = getIntent();
+        String tasks = intent.getStringExtra("task_one");
+        String subjects = intent.getStringExtra("subject_one");
+
+        //passing task and subject
+        intent = new Intent(this, MainActivity.class);
+
+        intent.putExtra("task_two", tasks);
+        intent.putExtra("subject_two", subjects);
         intent.putExtra("timedata", elapsedTimeInSec);
 
         startActivity(intent);
-    }
+    }*/
 }
