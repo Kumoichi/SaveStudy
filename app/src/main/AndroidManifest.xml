@@ -17,7 +17,7 @@
             android:name=".PlanPage"
             android:exported="false" />
         <activity
-            android:name=".Dashboard"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".DataMenu"
@@ -35,7 +35,7 @@
             android:name=".UserList"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Dashboard"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

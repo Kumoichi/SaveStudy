@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText subject, toDoTask;
     TextView stuTime;
-    Button insert_btn, view_btn, total_btn, goTimer_btn;
+    Button insert_btn, view_btn, total_btn, goTimer_btn,bar_btn;
     DBHelper db;
 
     @Override
@@ -30,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
         toDoTask = findViewById(R.id.toDoTask);
         stuTime = findViewById(R.id.timeData);
         insert_btn = findViewById(R.id.insert_btn);
-        view_btn = findViewById(R.id.view_btn);
-        total_btn = findViewById(R.id.total_btn);
-        goTimer_btn = findViewById(R.id.goTimer_btn);
+
+
 
         db = new DBHelper(this);
 
@@ -41,16 +40,6 @@ public class MainActivity extends AppCompatActivity {
         int intValue = mIntent.getIntExtra("timedata", 0);
         String studyTime = String.valueOf(intValue);
        stuTime.setText(studyTime);
-
-       /*
-        view_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UserList.class));
-            }
-        });
-        */
-
 
         insert_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     order = Integer.parseInt(ordering);
                     order = order -1;
-                    subject.setText(String.valueOf(order));
+
                 }
 
 
@@ -91,22 +80,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*bar_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String studyTime = String.valueOf(intValue);
-                Intent intent = new Intent(MainActivity.this, BarGraph.class);
-                intent.putExtra("key", studyTime);
-                startActivity(intent);
-            }
-        });*/
-
-        goTimer_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Dashboard.class));
-            }
-        });
     }
 }

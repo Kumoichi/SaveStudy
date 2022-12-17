@@ -18,7 +18,6 @@ public class Timer extends AppCompatActivity {
     private long pauseOffset;
     private int currentTime;
     private boolean running;
-    TextView textView, subject_id, todotask_id;
     GifImageView gifimage, stopgif;
 
 
@@ -29,15 +28,6 @@ public class Timer extends AppCompatActivity {
 
         gifimage = findViewById(R.id.gifimage);
         stopgif = findViewById(R.id.stopgif);
-        subject_id = findViewById(R.id.subject_id);
-        todotask_id = findViewById(R.id.todotask_id);
-
-        Intent intent = getIntent();
-        String task = intent.getStringExtra("task_one");
-        String subject = intent.getStringExtra("subject_one");
-        subject_id.setText(subject);
-        todotask_id.setText(task);
-
 
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("Time: %s");
@@ -60,7 +50,6 @@ public class Timer extends AppCompatActivity {
             running = true;
             stopgif.setVisibility(View.GONE);
             gifimage.setVisibility(View.VISIBLE);
-
         }
     }
 
@@ -71,7 +60,6 @@ public class Timer extends AppCompatActivity {
             running = false;
             gifimage.setVisibility(View.GONE);
             stopgif.setVisibility(View.VISIBLE);
-
         }
     }
 

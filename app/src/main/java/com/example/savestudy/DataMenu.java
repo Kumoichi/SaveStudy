@@ -20,8 +20,6 @@ public class DataMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_menu);
 
-        view_btn = findViewById(R.id.view_btn);
-
         completed_btn = findViewById(R.id.completed_btn);
         graph_btn = findViewById(R.id.graph_btn);
 

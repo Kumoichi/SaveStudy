@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.sql.Array;
@@ -17,6 +20,7 @@ public class UserList extends AppCompatActivity {
     ArrayList<String> subject, toDoTask, stuTime;
     DBHelper db;
     Adapter adapter;
+    ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +31,19 @@ public class UserList extends AppCompatActivity {
         toDoTask = new ArrayList<>();
         stuTime = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_view);
+        home = findViewById(R.id.home_button_two);
         adapter = new Adapter(this,subject,toDoTask,stuTime);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displayData();
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserList.this, Dashboard.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void displayData()

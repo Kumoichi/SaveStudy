@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".UserList">
+    tools:context=".UserList"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/home_button_two"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_baseline_home_24"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go back to home page"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -15,4 +29,4 @@
         android:layout_marginBottom="0dp" />
 
 
-</RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class PlanPage extends AppCompatActivity {
 
     private EditText task_edit, subject_edit;
-    private Button timeview_button;
+    private ImageView timeview_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

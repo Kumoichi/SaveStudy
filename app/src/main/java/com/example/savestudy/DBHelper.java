@@ -53,6 +53,7 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("drop Table if exists Userdetails");
     }
 
+    //inserting data for UserList
     public Boolean insertuserData(String subject, String toDoTask, String stuTime, int count) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -69,6 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    //getting total time of studying time.
     public String getSum()
     {
         //initialize database
@@ -97,6 +99,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return sAmount;
     }
 
+    //moving cursor to UserList data.
     public Cursor getData()
     {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -104,6 +107,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    //moving cursor to count.
     public Cursor getCount() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT count FROM Userdetails",null);
@@ -122,6 +126,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME2, null, values);
     }
 
+    //getting xData for showing date
     public ArrayList<String> queryXData() {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> xData = new ArrayList<String >();
@@ -138,6 +143,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return xData;
     }
 
+    //getting yData for showing minutes
     public ArrayList<String> queryYData() {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData = new ArrayList<String >();

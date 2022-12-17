@@ -1,96 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundfour"
     tools:context=".PlanPage">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="636dp"
-        android:text="What task are you going to do?"
-        android:textColor="@color/black"
-        android:textSize="25dp"
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="37dp"
+        android:background="@drawable/layout_bg"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/task_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="531dp"
-        android:ems="10"
-        android:hint="to do task"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.297" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="What task are you going to do?"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="439dp"
-        android:text="Which subject?"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_edit"
-        app:layout_constraintVertical_bias="0.188" />
+        <EditText
+            android:id="@+id/task_edit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"></EditText>
 
-    <EditText
-        android:id="@+id/subject_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="91dp"
-        android:layout_marginBottom="360dp"
-        android:ems="10"
-        android:hint="subject"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.207" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="312dp"
-        android:layout_height="298dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/dogstudyingstatic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subject_edit"
-        app:layout_constraintVertical_bias="0.884"></ImageButton>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Which subject?"
+            android:textColor="@color/black"
+            android:textSize="20dp"></TextView>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/timerview_button"
-        android:background="@color/brown"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Let's start!"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subject_edit" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/subject_edit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"></EditText>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/timerview_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/pencil" />
+
+            <TextView
+                android:id="@+id/myImageViewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/timerview_button"
+                android:layout_alignTop="@id/timerview_button"
+                android:layout_alignRight="@id/timerview_button"
+                android:layout_alignBottom="@id/timerview_button"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:paddingLeft="25dp"
+                android:paddingBottom="15dp"
+                android:text="Let's Start!"
+                android:textColor="#000000"
+                android:textSize="23dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:background="@drawable/dogstudyingstatic"></ImageView>
+    </LinearLayout>
+</RelativeLayout>
