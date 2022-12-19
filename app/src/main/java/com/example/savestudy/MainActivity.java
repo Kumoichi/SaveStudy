@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText subject, toDoTask;
     TextView stuTime;
-    Button insert_btn, view_btn, total_btn, goTimer_btn,bar_btn;
+    ImageButton insert_btn;
     DBHelper db;
 
     @Override
@@ -27,14 +28,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         subject = findViewById(R.id.subject_ed);
-        toDoTask = findViewById(R.id.toDoTask);
+        //toDoTask = findViewById(R.id.toDoTask);
         stuTime = findViewById(R.id.timeData);
         insert_btn = findViewById(R.id.insert_btn);
 
-
-
         db = new DBHelper(this);
-
         //getting timer value
         Intent mIntent = getIntent();
         int intValue = mIntent.getIntExtra("timedata", 0);
@@ -44,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
         insert_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //ここにテキストを入れるようにすればいいだけだからエディットも消せるはず
                 String subject_text = subject.getText().toString();
-                String task_text = toDoTask.getText().toString();
+                String task_text = "hi";
+                //String task_text = toDoTask.getText().toString();
                 String stuTime_text = stuTime.getText().toString();
 
                 //getting cursor object

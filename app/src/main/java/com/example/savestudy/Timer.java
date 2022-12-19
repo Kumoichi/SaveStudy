@@ -20,7 +20,6 @@ public class Timer extends AppCompatActivity {
     private boolean running;
     GifImageView gifimage, stopgif;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

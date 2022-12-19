@@ -84,7 +84,6 @@
                 android:onClick="displayChronometer"></ImageView>
         </RelativeLayout>
 
-
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifimage"
         android:layout_width="290dp"

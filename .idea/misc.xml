@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.159" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/border.xml" value="0.159" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/border_green.xml" value="0.159" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.159" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.159" />
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/layout_bg.xml" value="0.159" />
+        <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/layout_bg_brown.xml" value="0.159" />
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/drawable/round_button.xml" value="0.164" />
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/activity_bar_graph.xml" value="0.22" />
         <entry key="..\:/Users/minim/AndroidStudioProjects/SaveStudy/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
