@@ -98,8 +98,6 @@ public class BarGraph extends AppCompatActivity {
         BarDataSet dataSet = new BarDataSet(yvals, "minutes");
         dataSet.setValueTextSize(30f);
 
-
-
         ArrayList<IBarDataSet> dataSets1 = new ArrayList<>();
         dataSets1.add(dataSet);
 

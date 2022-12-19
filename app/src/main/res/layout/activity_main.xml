@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="10dp"
-    android:background="@drawable/backgroundfour"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please Enter study details"
+        android:text="Please Enter your details"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:textSize="32dp"
@@ -20,21 +20,11 @@
         android:textStyle="bold"
         />
 
-    <TextView
-        android:id="@+id/textsubject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Subject"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/text"
-        android:textColor="@color/black"></TextView>
-
     <EditText
         android:id="@+id/subject_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textsubject"
+        android:layout_below="@+id/text"
         android:layout_marginTop="10dp"
         android:hint="enter subject"
         android:textColor="@color/black"
@@ -42,7 +32,6 @@
         android:textSize="22sp" />
 
     <TextView
-        android:fontFamily=""
         android:id="@+id/taskView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,29 +42,27 @@
         android:textColorHint="@color/black"
         android:textSize="22sp" />
 
-
-    <EditText
+    <TextView
         android:id="@+id/toDoTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/taskView"
         android:layout_marginTop="10dp"
-        android:hint="enter to do task"
+        android:text="Task"
         android:textColor="@color/black"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="22sp"></EditText>
-
+        android:textColorHint="@color/black"
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/timeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toDoTask"
-        android:layout_marginTop="15dp"
         android:text="Time you studied"
+        android:layout_below="@+id/toDoTask"
+        android:layout_marginTop="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textSize="22sp" />
+        android:textSize="22sp"/>
 
     <TextView
         android:id="@+id/timeData"
@@ -87,18 +74,68 @@
         android:textColorHint="@color/black"
         android:textSize="22sp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/insert_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/timeData"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
-        android:background="@drawable/round_button"
-        android:textColor="@color/white"
-        android:height="150dp"
-        android:width="150dp"
+        android:backgroundTint="@color/black"
         android:text="Insert Data"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/view_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insert_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/black"
+        android:text="View Data"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/total_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-2dp"
+        android:backgroundTint="@color/black"
+        android:text="show total"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/goTimer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/total_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="@color/black"
+        android:text="go to timer"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bar_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goTimer_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="@color/black"
+        android:text="go to bar chart"
         android:textAllCaps="false"
         android:textSize="22sp"
         android:textStyle="bold" />
