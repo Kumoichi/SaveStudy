@@ -18,20 +18,14 @@
 
         <EditText
             android:id="@+id/subject_ed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text"
-            android:layout_marginTop="60dp"
-            android:hint="enter subject"
-            android:textColor="@color/black"
-            android:textColorHint="@android:color/darker_gray"
-            android:textSize="22sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></EditText>
 
         <TableLayout
-            android:layout_marginLeft="20dp"
             android:layout_width="310dp"
-            android:layout_height="88dp"
-            >
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -41,20 +35,20 @@
                     android:id="@+id/textView2"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_green"
                     android:text="Subject"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/border_green"/>
+                    android:textSize="20dp" />
 
                 <TextView
-                    android:background="@drawable/border_green"
                     android:id="@+id/textView"
-                    android:paddingLeft="10dp"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border_green"
+                    android:paddingLeft="10dp"
                     android:text="To do task"
                     android:textColor="@color/black"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
             </TableRow>
 
             <TableRow
@@ -64,56 +58,55 @@
 
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/textView_subject"
                     android:layout_width="77dp"
-                    android:layout_height="60dp"
-                    android:text="TextViewkkkkk"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border"
+                    android:paddingLeft="10dp"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/border"/>
+                    android:textSize="20dp" />
 
                 <TextView
-                    android:paddingLeft="10dp"
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView_task"
                     android:layout_width="190dp"
-                    android:layout_height="60dp"
-                    android:text="TextView"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border"
+                    android:paddingLeft="10dp"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/border"/>
+                    android:textSize="20dp" />
             </TableRow>
         </TableLayout>
 
         <TableLayout
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            >
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp">
 
             <TextView
-                android:background="@drawable/border_green"
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/border_green"
                 android:text="Time you studied"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/timeData"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
+                android:padding="10dp"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="40dp" />
         </TableLayout>
 
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp">
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp">
 
 
             <ImageButton
@@ -121,21 +114,19 @@
                 android:layout_width="300dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="4dp"
                 android:background="@drawable/pencil"
                 android:textAllCaps="false"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="110dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="60dp"
                 android:text="Check Data"
-                android:textSize="20dp"
                 android:textColor="@color/black"
-                ></TextView>
+                android:textSize="20dp"></TextView>
         </RelativeLayout>
     </LinearLayout>
 

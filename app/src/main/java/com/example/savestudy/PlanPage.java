@@ -39,6 +39,5 @@ public class PlanPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

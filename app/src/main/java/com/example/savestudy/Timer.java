@@ -19,14 +19,18 @@ public class Timer extends AppCompatActivity {
     private int currentTime;
     private boolean running;
     GifImageView gifimage, stopgif;
+    private String subject, task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
-
         gifimage = findViewById(R.id.gifimage);
         stopgif = findViewById(R.id.stopgif);
+
+        Intent intent = getIntent();
+        subject = intent.getStringExtra("subject_one");
+        task = intent.getStringExtra("task_one");
 
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("Time: %s");
@@ -73,7 +77,8 @@ public class Timer extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("timedata", elapsedTimeInSec);
-
+        intent.putExtra("subject_two", subject);
+        intent.putExtra("task_two",task);
         startActivity(intent);
     }
 }

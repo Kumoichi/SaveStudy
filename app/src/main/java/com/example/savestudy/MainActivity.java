@@ -19,7 +19,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     EditText subject, toDoTask;
-    TextView stuTime;
+    TextView stuTime,textView_subject,textView_task;
     ImageButton insert_btn;
     DBHelper db;
 
@@ -31,13 +31,21 @@ public class MainActivity extends AppCompatActivity {
         //toDoTask = findViewById(R.id.toDoTask);
         stuTime = findViewById(R.id.timeData);
         insert_btn = findViewById(R.id.insert_btn);
+        textView_subject = findViewById(R.id.textView_subject);
+        textView_task = findViewById(R.id.textView_task);
+
+
 
         db = new DBHelper(this);
         //getting timer value
         Intent mIntent = getIntent();
         int intValue = mIntent.getIntExtra("timedata", 0);
+        String getSubject = mIntent.getStringExtra("subject_two");
+        String getTask = mIntent.getStringExtra("task_two");
         String studyTime = String.valueOf(intValue);
-       stuTime.setText(studyTime);
+        stuTime.setText(studyTime);
+        textView_subject.setText(getSubject);
+        textView_task.setText(getTask);
 
         insert_btn.setOnClickListener(new View.OnClickListener() {
             @Override
