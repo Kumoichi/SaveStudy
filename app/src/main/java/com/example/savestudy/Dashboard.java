@@ -22,6 +22,7 @@ public class Dashboard extends AppCompatActivity {
         completed_intent_btn = findViewById(R.id.completed_intent_btn);
         graph_intent_btn = findViewById(R.id.graph_intent_btn);
 
+        //this is for moving to PlanPage.
         todo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +31,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        //this is for moving to Timer page.
         timer_intent_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +40,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-
+        //this is for moving to UserList page.
         completed_intent_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +49,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        //This is for moving to BarGraph page.
         graph_intent_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -28,6 +28,7 @@ public class Timer extends AppCompatActivity {
         gifimage = findViewById(R.id.gifimage);
         stopgif = findViewById(R.id.stopgif);
 
+        //getting subject and task string from PlanPage
         Intent intent = getIntent();
         subject = intent.getStringExtra("subject_one");
         task = intent.getStringExtra("task_one");

@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText subject, toDoTask;
+
     TextView stuTime,textView_subject,textView_task;
     ImageButton insert_btn;
     DBHelper db;
@@ -27,14 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        subject = findViewById(R.id.subject_ed);
-        //toDoTask = findViewById(R.id.toDoTask);
         stuTime = findViewById(R.id.timeData);
         insert_btn = findViewById(R.id.insert_btn);
         textView_subject = findViewById(R.id.textView_subject);
         textView_task = findViewById(R.id.textView_task);
-
-
 
         db = new DBHelper(this);
         //getting timer value
@@ -42,17 +38,26 @@ public class MainActivity extends AppCompatActivity {
         int intValue = mIntent.getIntExtra("timedata", 0);
         String getSubject = mIntent.getStringExtra("subject_two");
         String getTask = mIntent.getStringExtra("task_two");
-        String studyTime = String.valueOf(intValue);
+        int hours = intValue / 3600;
+        int minutes = (intValue % 3600) / 60;
+        int seconds = intValue % 60;
+
+        String hoursString = String.valueOf(hours);
+        String minutesString = String.valueOf(minutes);
+        String secondsString = String.valueOf(seconds);
+
+        String studyTime = (hoursString + ":" + minutesString + ":" + secondsString);
         stuTime.setText(studyTime);
         textView_subject.setText(getSubject);
         textView_task.setText(getTask);
+
 
         insert_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //ここにテキストを入れるようにすればいいだけだからエディットも消せるはず
-                String subject_text = subject.getText().toString();
-                String task_text = "hi";
+                String subject_text = textView_subject.getText().toString();
+                String task_text = textView_task.getText().toString();
                 //String task_text = toDoTask.getText().toString();
                 String stuTime_text = stuTime.getText().toString();
 
@@ -70,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     order = Integer.parseInt(ordering);
                     order = order -1;
-
                 }
 
 

@@ -22,16 +22,18 @@ public class PlanPage extends AppCompatActivity {
         subject_edit = findViewById(R.id.subject_edit);
         timeview_button = findViewById(R.id.timerview_button);
 
-
+        //this is for moving to timer page and pass task and subject string
         timeview_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PlanPage.this, Timer.class);
 
+                //passing task string
                 String task_one = task_edit.getText().toString();
                 String tasks = task_one;
                 intent.putExtra("task_one", tasks);
 
+                //passing subject string
                 String subject_one = subject_edit.getText().toString();
                 String subjects = subject_one;
                 intent.putExtra("subject_one", subjects);
