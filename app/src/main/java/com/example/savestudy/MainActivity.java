@@ -18,7 +18,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-
     TextView stuTime,textView_subject,textView_task;
     ImageButton insert_btn;
     DBHelper db;

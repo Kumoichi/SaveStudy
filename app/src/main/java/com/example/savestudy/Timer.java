@@ -20,6 +20,7 @@ public class Timer extends AppCompatActivity {
     private boolean running;
     GifImageView gifimage, stopgif;
     private String subject, task;
+    int elapsedTimeInSec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +37,6 @@ public class Timer extends AppCompatActivity {
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("Time: %s");
         chronometer.setBase(SystemClock.elapsedRealtime());
-
-        chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
-            @Override
-            public void onChronometerTick(Chronometer chronometer) {
-                if ((SystemClock.elapsedRealtime() - chronometer.getBase()) >= 100000) {
-
-                }
-            }
-        });
     }
 
     public void startChronometer(View v) {
@@ -54,6 +46,7 @@ public class Timer extends AppCompatActivity {
             running = true;
             stopgif.setVisibility(View.GONE);
             gifimage.setVisibility(View.VISIBLE);
+
         }
     }
 
@@ -64,6 +57,8 @@ public class Timer extends AppCompatActivity {
             running = false;
             gifimage.setVisibility(View.GONE);
             stopgif.setVisibility(View.VISIBLE);
+            elapsedTimeInSec = (int) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
+
         }
     }
 

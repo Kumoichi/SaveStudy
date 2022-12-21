@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -18,6 +20,7 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.Utils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,7 +41,6 @@ public class BarGraph extends AppCompatActivity {
 
         addDataToGraph();
         barChart.invalidate();
-
         SaveToDatabase();
 
         home_button_one.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +61,7 @@ public class BarGraph extends AppCompatActivity {
 
         //intentはされているのでボタンを修正する
         //時間の表記を変える
-        //１週間たつと違うページに行くようにする
+        //１たつと違うページに行くようにする
         Intent mIntent = getIntent();
         String yvalue = mIntent.getStringExtra("key");
 
@@ -96,11 +98,10 @@ public class BarGraph extends AppCompatActivity {
         }
 
         BarDataSet dataSet = new BarDataSet(yvals, "minutes");
-        dataSet.setValueTextSize(30f);
+        dataSet.setValueTextSize(25f);
 
         ArrayList<IBarDataSet> dataSets1 = new ArrayList<>();
         dataSets1.add(dataSet);
-
 
         BarData data = new BarData(dataSets1);
 
@@ -113,7 +114,7 @@ public class BarGraph extends AppCompatActivity {
 
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAvoidFirstLastClipping(true);
-        xAxis.setDrawLabels(true);
+        //xAxis.setDrawLabels(true);
         xAxis.isCenterAxisLabelsEnabled();
         xAxis.setGranularityEnabled(true);
 
@@ -122,5 +123,12 @@ public class BarGraph extends AppCompatActivity {
 
         barChart.setMaxVisibleValueCount(5);
         barChart.setFitBars(true);
+        barChart.getXAxis().setTextSize(12);
+        barChart.getAnimation();
+        Legend l = barChart.getLegend();
+        l.setTextSize(30f);
+        l.setTextColor(Color.BLACK);
+        l.setForm(Legend.LegendForm.CIRCLE);
+
     }
 }
