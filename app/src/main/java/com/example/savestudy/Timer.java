@@ -7,6 +7,7 @@ import android.os.SystemClock;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class Timer extends AppCompatActivity {
     private boolean running;
     GifImageView gifimage, stopgif;
     private String subject, task;
+    private ImageView record_start,record_pause;
     int elapsedTimeInSec;
 
     @Override
@@ -28,6 +30,8 @@ public class Timer extends AppCompatActivity {
         setContentView(R.layout.activity_timer);
         gifimage = findViewById(R.id.gifimage);
         stopgif = findViewById(R.id.stopgif);
+        record_start = findViewById(R.id.record_start);
+        record_pause = findViewById(R.id.record_pause);
 
         //getting subject and task string from PlanPage
         Intent intent = getIntent();
@@ -46,7 +50,8 @@ public class Timer extends AppCompatActivity {
             running = true;
             stopgif.setVisibility(View.GONE);
             gifimage.setVisibility(View.VISIBLE);
-
+            record_pause.setVisibility(View.GONE);
+            record_start.setVisibility(View.VISIBLE);
         }
     }
 
@@ -57,8 +62,9 @@ public class Timer extends AppCompatActivity {
             running = false;
             gifimage.setVisibility(View.GONE);
             stopgif.setVisibility(View.VISIBLE);
+            record_start.setVisibility(View.GONE);
+            record_pause.setVisibility(View.VISIBLE);
             elapsedTimeInSec = (int) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
-
         }
     }
 
@@ -67,9 +73,21 @@ public class Timer extends AppCompatActivity {
         pauseOffset = 0;
     }
 
-    public void displayChronometer(View view) {
+    public void displayChronometerForStart(View view) {
         //textView.setText(chronometer.getText());
         int elapsedTimeInSec = (int) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("timedata", elapsedTimeInSec);
+        intent.putExtra("subject_two", subject);
+        intent.putExtra("task_two",task);
+        startActivity(intent);
+    }
+
+
+    public void displayChronometerForPause(View view) {
+        //textView.setText(chronometer.getText());
+        // int elapsedTimeInSec = (int) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("timedata", elapsedTimeInSec);

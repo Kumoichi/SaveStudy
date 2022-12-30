@@ -76,12 +76,24 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/record_start"
                 android:layout_width="180dp"
                 android:layout_height="130dp"
                 android:layout_marginLeft="85dp"
                 android:layout_marginTop="110dp"
                 android:background="@drawable/handthree"
-                android:onClick="displayChronometer"></ImageView>
+                android:onClick="displayChronometerForStart"
+                android:visibility="visible"></ImageView>
+
+            <ImageView
+                android:id="@+id/record_pause"
+                android:layout_width="180dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="110dp"
+                android:background="@drawable/handthree"
+                android:onClick="displayChronometerForPause"
+                android:visibility="invisible"></ImageView>
         </RelativeLayout>
 
     <pl.droidsonroids.gif.GifImageView

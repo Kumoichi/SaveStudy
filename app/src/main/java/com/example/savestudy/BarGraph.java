@@ -114,7 +114,7 @@ public class BarGraph extends AppCompatActivity {
 
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAvoidFirstLastClipping(true);
-        //xAxis.setDrawLabels(true);
+        xAxis.setDrawLabels(true);
         xAxis.isCenterAxisLabelsEnabled();
         xAxis.setGranularityEnabled(true);
 
