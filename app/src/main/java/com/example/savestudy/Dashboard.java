@@ -44,7 +44,7 @@ public class Dashboard extends AppCompatActivity {
         completed_intent_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this,BarGraph.class);
+                Intent intent = new Intent(Dashboard.this, UserList.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,8 @@ public class Dashboard extends AppCompatActivity {
         graph_intent_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this,BarGraph.class);
+                Intent intent = new Intent(Dashboard.this, BarGraph.class);
+                intent.putExtra("key","0");
                 startActivity(intent);
             }
         });

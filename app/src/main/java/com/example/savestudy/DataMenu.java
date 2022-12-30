@@ -46,7 +46,6 @@ public class DataMenu extends AppCompatActivity {
         });
 
 
-
         /*
         this is for when you want to put total time on the top of graph view.
         total_btn.setOnClickListener(new View.OnClickListener() {
