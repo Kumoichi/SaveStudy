@@ -43,14 +43,14 @@ dependencies {
 
 ### Main Page
 4 options on the main page.  
-If you want to see the results, you can press Complete button, or Graph button.  
-If you want to start timer, you can press Timer button.  
-You usually want to start from Plan page to decide which task and subject you want to complete.  
+If you want to see the results, you can press Completed button, or Graph button.  
+If you want to go to Timer Page, you can press Timer button.  
+You usually want to start from Plan Page to decide which task and subject you want to complete.  
 
 ![スクリーンショット (305)](https://user-images.githubusercontent.com/64859961/211694676-20aa0032-d70d-4f97-9c78-aeaa8a13f8b1.png)
 
 ### Plan Page
-You can enter a task name and a subject name.  
+You can enter a task and a subject.  
 
 ![スクリーンショット (307)](https://user-images.githubusercontent.com/64859961/211694742-610807c5-3f8c-4dfa-9e84-039760c64d9c.png)
 
