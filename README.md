@@ -1,5 +1,46 @@
 # SaveStudy
 
+This project is done with Android Studio.
+
+
+### Versions:
+Android Studio Chipmunk: 2021.2.1 Patch2.  
+Tested on: Pixel 4, Pixel 5, Pixel XL. 
+
+
+
+
+### Getting started  
+Download or clone this repository and import it into Android Studio.   
+  
+    
+      
+        
+        
+
+
+
+Requirements for showing Graph and showing GIF image.  
+Add to the android section in buidl.gradle following code.
+
+```
+implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
+```
+↓  
+```
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
+}
+```  
+
 ### Main Page
 4 options on the main page.  
 If you want to see the results, you can press Complete button, or Graph button.  
