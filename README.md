@@ -97,4 +97,5 @@ It shows three things.
 
 ### Graph Page  
 It shows total time you study for each days  
+If you study on January 11th, it creates a graph for January 11th automatically.  
 ![スクリーンショット (304)](https://user-images.githubusercontent.com/64859961/211694812-e4ad02ad-ef8b-474b-9613-c86f9d6dc9fa.png)
